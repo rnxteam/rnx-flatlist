@@ -1,22 +1,3 @@
-/*
-  eslint-disable
-
-  no-underscore-dangle,
-  max-len,
-  consistent-return,
-  no-mixed-operators,
-  no-unused-expressions,
-  no-confusing-arrow,
-  no-plusplus,
-  no-nested-ternary,
-  no-use-before-define,
-  camelcase,
-  no-restricted-syntax,
-  guard-for-in,
-  react/no-multi-comp,
-  react/prop-types
- */
-
 /**
 * Copyright (c) 2015-present, Facebook, Inc.
 * All rights reserved.

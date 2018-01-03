@@ -1,19 +1,3 @@
-/*
-  eslint-disable
-
-  no-underscore-dangle,
-  max-len,
-  consistent-return,
-  no-mixed-operators,
-  no-unused-expressions,
-  no-confusing-arrow,
-  no-plusplus,
-  no-unused-vars,
-  no-else-return,
-  prefer-template,
-
-  react/prop-types
- */
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -78,16 +62,16 @@ const invariant = require('fbjs/lib/invariant');
  * is mostly for debugging and performance comparison.
  */
 class MetroListView extends React.Component {
-  scrollToEnd(params) {
+  scrollToEnd() {
     throw new Error('scrollToEnd not supported in legacy ListView.');
   }
-  scrollToIndex(params) {
+  scrollToIndex() {
     throw new Error('scrollToIndex not supported in legacy ListView.');
   }
-  scrollToItem(params) {
+  scrollToItem() {
     throw new Error('scrollToItem not supported in legacy ListView.');
   }
-  scrollToLocation(params) {
+  scrollToLocation() {
     throw new Error('scrollToLocation not supported in legacy ListView.');
   }
   scrollToOffset(params) {
@@ -136,7 +120,7 @@ class MetroListView extends React.Component {
   };
   state = this._computeState(this.props, {
     ds: new ListView.DataSource({
-      rowHasChanged: (itemA, itemB) => true,
+      rowHasChanged: () => true,
       sectionHeaderHasChanged: () => true,
       getSectionHeaderData: (dataBlob, sectionID) =>
         this.state.sectionHeaderData[sectionID],
@@ -175,7 +159,7 @@ class MetroListView extends React.Component {
       invariant(!props.items, 'Cannot have both sections and items props.');
       const sections = {};
       props.sections.forEach((sectionIn, ii) => {
-        const sectionID = 's' + ii;
+        const sectionID = `s${ii}`;
         sections[sectionID] = sectionIn.data;
         sectionHeaderData[sectionID] = sectionIn;
       });
@@ -195,8 +179,8 @@ class MetroListView extends React.Component {
    * suppresses an error when upgrading Flow's support for React. To see the
    * error delete this comment and run Flow. */
   _renderFooter = () => <this.props.FooterComponent key="$footer" />;
-  _renderRow = (item, sectionID, rowID, highlightRow) => this.props.renderItem({ item, index: rowID });
-  _renderSectionHeader = (section, sectionID) => {
+  _renderRow = (item, sectionID, rowID) => this.props.renderItem({ item, index: rowID });
+  _renderSectionHeader = (section) => {
     const { renderSectionHeader } = this.props;
     invariant(
       renderSectionHeader,

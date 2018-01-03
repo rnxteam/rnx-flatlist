@@ -1,21 +1,3 @@
-/*
-  eslint-disable
-
-  no-underscore-dangle,
-  max-len,
-  consistent-return,
-  no-mixed-operators,
-  no-unused-expressions,
-  no-confusing-arrow,
-  no-plusplus,
-  no-nested-ternary,
-  no-use-before-define,
-  prefer-template,
-
-  react/no-multi-comp,
-  react/prop-types,
- */
-
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -51,8 +33,7 @@ function elementsThatOverlapOffsets(
         if (kk === offsets.length - 1) {
           invariant(
             out.length === offsets.length,
-            'bad offsets input, should be in increasing order ' +
-            JSON.stringify(offsets),
+            `bad offsets input, should be in increasing order ${JSON.stringify(offsets)}`,
           );
           return out;
         }
@@ -113,7 +94,7 @@ function computeWindowedRenderLimits(
   const leadFactor = 0.5; // Math.max(0, Math.min(1, velocity / 25 + 0.5));
 
   const fillPreference =
-    velocity > 1 ? 'after' : velocity < -1 ? 'before' : 'none';
+    velocity > 1 ? 'after' : velocity < -1 ? 'before' : 'none'; // eslint-disable-line
 
   const overscanBegin = Math.max(
     0,
@@ -192,15 +173,7 @@ function computeWindowedRenderLimits(
     )
   ) {
     throw new Error(
-      'Bad window calculation ' +
-      JSON.stringify({
-        first,
-        last,
-        itemCount,
-        overscanFirst,
-        overscanLast,
-        visible,
-      }),
+      `Bad window calculation ${JSON.stringify({ first, last, itemCount, overscanFirst, overscanLast, visible })}`,
     );
   }
   return { first, last };

@@ -1,17 +1,3 @@
-/*
-  eslint-disable
-
-  no-underscore-dangle,
-  max-len,
-  consistent-return,
-  no-mixed-operators,
-  no-unused-expressions,
-  no-confusing-arrow,
-  no-plusplus,
-  no-console,
-
-  react/prop-types
- */
 
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
@@ -503,7 +489,7 @@ class FlatList extends PureComponent {
       // Warning: may not have full feature parity and is meant more for debugging and performance
       // comparison.
       if (!this._hasWarnedLegacy) {
-        console.warn(
+        console.warn( // eslint-disable-line
           'FlatList: Using legacyImplementation - some features not supported and performance ' +
           'may suffer',
         );
@@ -530,7 +516,7 @@ class FlatList extends PureComponent {
     return data[index];
   };
 
-  _getItemCount = data => data ? Math.ceil(data.length / this.props.numColumns) : 0;
+  _getItemCount = data => (data ? Math.ceil(data.length / this.props.numColumns) : 0);
 
   _keyExtractor = (items, index) => {
     const { keyExtractor, numColumns } = this.props;

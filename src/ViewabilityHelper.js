@@ -1,23 +1,3 @@
-/*
-  eslint-disable
-
-  no-underscore-dangle,
-  max-len,
-  consistent-return,
-  no-mixed-operators,
-  no-unused-expressions,
-  no-confusing-arrow,
-  no-plusplus,
-  no-nested-ternary,
-  no-use-before-define,
-  prefer-template,
-  no-else-return,
-  no-continue,
-  arrow-parens,
-
-  react/no-multi-comp,
-  react/prop-types
- */
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -99,7 +79,7 @@ class ViewabilityHelper {
     const { first, last } = renderRange || { first: 0, last: itemCount - 1 };
     invariant(
       last < itemCount,
-      'Invalid render range ' + JSON.stringify({ renderRange, itemCount }),
+      `Invalid render range ${JSON.stringify({ renderRange, itemCount })}`,
     );
     for (let idx = first; idx <= last; idx++) {
       const metrics = getFrameMetrics(idx);
@@ -213,7 +193,7 @@ class ViewabilityHelper {
     );
     const prevItems = this._viewableItems;
     const nextItems = new Map(
-      viewableIndicesToCheck.map(ii => {
+      viewableIndicesToCheck.map((ii) => {
         const viewable = createViewToken(ii, true);
         return [viewable.key, viewable];
       }),

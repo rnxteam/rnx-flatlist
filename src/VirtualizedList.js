@@ -1,21 +1,3 @@
-/*
-  eslint-disable
-
-  no-underscore-dangle,
-  max-len,
-  consistent-return,
-  no-mixed-operators,
-  no-unused-expressions,
-  no-confusing-arrow,
-  no-plusplus,
-  no-nested-ternary,
-  no-use-before-define,
-  no-console,
-
-  react/no-multi-comp,
-  react/prop-types
- */
-
 /**
 * Copyright (c) 2015-present, Facebook, Inc.
 * All rights reserved.
@@ -52,7 +34,7 @@ import ViewabilityHelper from './ViewabilityHelper';
 import FillRateHelper from './FillRateHelper';
 import { computeWindowedRenderLimits } from './VirtualizeUtils';
 
-const infoLog = console.log;
+const infoLog = console.log; // eslint-disable-line
 
 // const Batchinator = require('Batchinator');
 // const FillRateHelper = require('FillRateHelper');
@@ -731,7 +713,7 @@ class VirtualizedList extends React.PureComponent {
         inversionStyle,
       );
       if (!this._hasWarned.keys && _usedIndexForKey) {
-        console.warn(
+        console.warn( // eslint-disable-line
           'VirtualizedList: missing keys for items, make sure to specify a key property on each ' +
           'item or provide a custom keyExtractor.',
         );
@@ -864,9 +846,7 @@ class VirtualizedList extends React.PureComponent {
     } else if (props.onRefresh) {
       invariant(
         typeof props.refreshing === 'boolean',
-        `\`refreshing\` prop must be set as a boolean in order to use \`onRefresh\`, but got \`${
-          JSON.stringify(props.refreshing)
-        }\``,
+        `\`refreshing\` prop must be set as a boolean in order to use \`onRefresh\`, but got \`${JSON.stringify(props.refreshing)}\``,
       );
       return (
         /* $FlowFixMe(>=0.53.0 site=react_native_fb,react_native_oss) This

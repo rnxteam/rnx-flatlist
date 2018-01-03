@@ -1,3 +1,3 @@
-import FlatList from './lib/FlatList';
+import FlatList from './src/FlatList';
 
 module.exports = FlatList;
