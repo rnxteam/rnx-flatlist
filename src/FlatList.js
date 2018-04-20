@@ -15,10 +15,7 @@
 import React from 'react';
 import { View } from 'react-native';
 // import { StyleObj } from 'StyleSheetTypes';
-import {
-  // ViewabilityConfig,
-  ViewabilityConfigCallbackPair,
-} from 'ViewabilityHelper';
+import ViewabilityHelper from './ViewabilityHelper';
 import PureComponent from './PureComponent.js';
 
 // import { Props as VirtualizedListProps } from 'VirtualizedList';

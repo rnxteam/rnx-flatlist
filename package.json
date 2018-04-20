@@ -1,6 +1,6 @@
 {
-  "name": "@wnpm/rnx-flatlist",
-  "version": "0.1.3",
+  "name": "rnx-flatlist",
+  "version": "0.0.1",
   "description": "FlatList component for React Native.",
   "main": "index.js",
   "keywords": [
@@ -18,7 +18,7 @@
     "src",
     "index.js"
   ],
-  "author": "zhen.peng",
+  "author": "wangdagen",
   "license": "ISC",
   "devDependencies": {
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -33,7 +33,5 @@
     "eslint": "^3.6.0",
     "eslint-config-rnx": "^1.0.5",
     "husky": "^0.14.3"
-  },
-  "dependencies": {
   }
 }

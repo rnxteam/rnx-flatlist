@@ -1,2 +1,3 @@
 # FlatList
-> 从React-Native中迁移FlatList到rnx来
+
+从 React Native 中迁移出来的独立 FlatList 组件

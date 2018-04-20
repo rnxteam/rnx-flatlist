@@ -19,7 +19,7 @@
 //   ViewabilityConfigCallbackPair,
 // } from 'ViewabilityHelper';
 
-import React, { PropTypes } from 'React';
+import React, { PropTypes } from 'react';
 import ReactNative, {
   ScrollView,
   View,
