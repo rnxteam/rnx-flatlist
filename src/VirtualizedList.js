@@ -502,7 +502,9 @@ class VirtualizedList extends React.PureComponent {
 
   componentWillUnmount() {
     this._updateViewableItems(null);
-    this._updateCellsToRenderBatcher.dispose();
+    this._updateCellsToRenderBatcher.dispose({
+      abort: true,
+    });
     this._viewabilityTuples.forEach((tuple) => {
       tuple.viewabilityHelper.dispose();
     });
